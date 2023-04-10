@@ -99,12 +99,6 @@ export class ContentListComponent implements OnInit {
 	]
 	
 	
-	 
-	
-	
-	
-	
-	
 }
 
 addBoardToList(newBoardFromChild: Content) {
