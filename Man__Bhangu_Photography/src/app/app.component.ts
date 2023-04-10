@@ -9,3 +9,4 @@ export class AppComponent {
   title = 'Man__Bhangu_Photography';
   name: string="Manchahat";
 }
+  

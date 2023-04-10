@@ -1,25 +1,25 @@
 
 <form>
-    <label>Enter title: </label>
-      <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
-      <button type="button" class="button" (click)="mysearch()">Search</button>
-  </form>
-  
+  <label>Enter title: </label>
+    <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
+    <button type="button" class="button" (click)="mysearch()">Search</button>
+</form>
+
+ 
+  <div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
+    {{message}}
+  </div><br> <br><br>   
+  <h3>Photography 1</h3>
+  <div class="Photography 1">
    
-    <div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
-      {{message}}
-    </div><br> <br><br>   
-    <h3>Photography 1</h3>
-    <div class="Photography 1">
-     
-  
-        <app-content-card  *ngFor="let item of content | contentPipe:'Photography 1'"   [item]="item"  first as isFirst [class.isFirst]="true"></app-content-card> 
-      </div>
-    <h3>Photography 2</h3>
-      <div class="Photography 2">
-        <app-content-card *ngFor="let item of content | contentPipe:'Photography 2'" [item]="item" ></app-content-card>
-      </div>
-      <h3>No type</h3>
-      <div class="content-list-container">
-        <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
-      </div>
+
+      <app-content-card  *ngFor="let item of content | contentPipe:'Photography 1'"   [item]="item"  ></app-content-card> 
+    </div>
+  <h3>Photography 2</h3>
+    <div class="canada">
+      <app-content-card *ngFor="let item of content | contentPipe:'Photography 2'" [item]="item" ></app-content-card>
+    </div>
+    <h3>No type</h3>
+    <div class="content-list-container">
+      <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
+    </div>
