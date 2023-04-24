@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MessagesService } from './services/messages.service';
-import { MyFavouriteSportsService } from './services/Photography.service';
+import { PhotographyService } from './services/Photography.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
   errorMessage: any;
   id: any;
 
-  constructor(private contentService: MyFavouriteSportsService,
+  constructor(private contentService: PhotographyService,
     private messageService: MessagesService) { }
 
 

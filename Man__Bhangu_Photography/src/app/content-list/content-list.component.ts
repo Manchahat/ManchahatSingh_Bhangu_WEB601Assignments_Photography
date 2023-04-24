@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Content } from '../helper-files/content-interface';
 import { MessagesService } from '../services/messages.service';
-import { MyFavouriteSportsService } from '../services/Photography.service';
+import { PhotographyService } from '../services/Photography.service';
 
 @Component({
   selector: 'app-content-list',
@@ -31,7 +31,7 @@ export class ContentListComponent implements OnInit {
 	  });
 	  
 	}
-	constructor(private contentService: MyFavouriteSportsService,private messageService: MessagesService)
+	constructor(private contentService: PhotographyService,private messageService: MessagesService)
 	{
 	  
 	}

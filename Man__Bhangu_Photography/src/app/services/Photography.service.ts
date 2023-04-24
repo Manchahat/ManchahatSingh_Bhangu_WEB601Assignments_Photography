@@ -6,7 +6,7 @@ import { MessagesService } from './messages.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MyFavouritePhotographyService {
+export class PhotographyService {
 
   constructor(private messageService: MessagesService) { }
   
