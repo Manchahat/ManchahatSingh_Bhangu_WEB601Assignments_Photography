@@ -1,8 +1,5 @@
-<div class="create">
-  <app-create-content (newBoardEvent)="addBoardToList($event)"></app-create-content>
-  <div *ngIf="failureMsg != ''" [innerHTML]="failureMsg" class="failure"></div>
-</div>
- <form> 
+
+<form>
   <label>Enter title: </label>
     <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
     <button type="button" class="button" (click)="mysearch()">Search</button>
@@ -13,16 +10,16 @@
     {{message}}
   </div><br> <br><br>   
   <h3>Photography 1</h3>
-  <div class="Photography 1">
+  <div class="india">
    
 
       <app-content-card  *ngFor="let item of content | contentPipe:'Photography 1'"   [item]="item"  ></app-content-card> 
     </div>
   <h3>Photography 2</h3>
-    <div class="Photography 2">
+    <div class="canada">
       <app-content-card *ngFor="let item of content | contentPipe:'Photography 2'" [item]="item" ></app-content-card>
     </div>
-    <h3>No type</h3>
+    <h3>No classification</h3>
     <div class="content-list-container">
       <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
-    </div> 
+    </div>

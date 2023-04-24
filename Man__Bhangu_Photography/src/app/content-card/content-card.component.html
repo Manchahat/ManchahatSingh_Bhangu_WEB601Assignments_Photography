@@ -3,9 +3,7 @@
   <div class="card" style="width: 18rem;" >
         <h1 class="card-title" [innerHtml]="item.id" class="card-title"></h1> 
         <h2 class="card-header" [innerHtml]="item.title"></h2>  
-       <!--  <h1 class="card-title" appHoverAffect hoverAffect="bold" [innerHtml]="item.id"></h1>
-        <h2 class="card-header" appHoverAffect hoverAffect="bold" [innerHtml]="item.title"></h2> -->
-       <!-- <img src="{{item.imgURL}}" class="card-img-top" (click)="Onclick(item)" alt="Card image cap"> -->
+       
        <div [ngSwitch]="item.imgURL">
         <img   *ngSwitchCase="''" src="{{Default}}" (click)="Onclick(item)" class="card-img-top" alt="...">
         <img   *ngSwitchDefault src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
@@ -25,7 +23,7 @@
 
           
           
-          
+         
         </div>
       </div>
 </div>      
