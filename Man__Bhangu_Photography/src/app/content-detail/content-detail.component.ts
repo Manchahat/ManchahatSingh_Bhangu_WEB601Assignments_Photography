@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MessagesService } from '../services/messages.service';
-import { MyFavouriteSportsService } from '../services/Photography.service';
+import { PhotographyService } from '../services/Photography.service';
 
 @Component({
   selector: 'app-content-detail',
