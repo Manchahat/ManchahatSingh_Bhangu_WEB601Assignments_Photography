@@ -1,31 +1,28 @@
-<div [ngClass]="{'type1': item.type === 'Photography 1', 'type2': item.type === 'Photography 2','type3':item.type===''}"></div>
-<div class="content-list">
-  <div class="card" style="width: 18rem;" >
-        <h1 class="card-title" [innerHtml]="item.id" class="card-title"></h1> 
-        <h2 class="card-header" [innerHtml]="item.title"></h2>  
-       <!--  <h1 class="card-title" appHoverAffect hoverAffect="bold" [innerHtml]="item.id"></h1>
-        <h2 class="card-header" appHoverAffect hoverAffect="bold" [innerHtml]="item.title"></h2> -->
-       <!-- <img src="{{item.imgURL}}" class="card-img-top" (click)="Onclick(item)" alt="Card image cap"> -->
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{item.type}}</mat-card-title></mat-card-header>
+  
+    <mat-card-content>
+
+    <div [ngClass]="{'type1': item.type === 'Photography 1', 'type2': item.type === 'Photography 2','type3':item.type===''}"></div>
+    <div class="content-list">
+    <div class="card" style="width: 18rem;" >
+
+    <div  appHoverAffect hoverAffect="2px  solid green">
+      <mat-card-title>{{item.id}}</mat-card-title>
+  
+    
+      <h5 class="card-title" appHoverAffect hoverAffect="bold" >{{item.title |lowercase}}</h5>
+      
        <div [ngSwitch]="item.imgURL">
         <img   *ngSwitchCase="''" src="{{Default}}" (click)="Onclick(item)" class="card-img-top" alt="...">
         <img   *ngSwitchDefault src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+        <a class="btn btn-success" routerLink="/detail/{{ item.id }}">View Details</a>
+           
        </div>
-       <div class="card-body">
-          <p class="card-text"  [innerHtml]="item.description"></p>
-          <p class="card-text"  [innerHtml]="item.creator"></p>
-          <p class="card-text"appHoverAffect hoverAffect="underline" [innerHtml]="item.type"></p>
-          <div>Tag:
-            <ul class="card-text">
-            <span *ngFor="let tag of item?.tags">
-              <li appHoverAffect hoverAffect="bold">#{{tag}}</li>
-            </span>
-          </ul>
-        </div>
-         
-
-          
-          
-          
+       
         </div>
       </div>
-</div>      
+</div>
+</mat-card-content></mat-card>

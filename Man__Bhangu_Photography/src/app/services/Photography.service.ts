@@ -6,15 +6,15 @@ import { MessagesService } from './messages.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MyFavouriteSportsService {
+export class MyFavouritePhotographyService {
 
   constructor(private messageService: MessagesService) { }
   
-  getSports(): Observable<any> {
+  getPhotography(): Observable<any> {
     this.messageService.addMessageService('Content array loaded!');
     return of(contentDb);
   }
-  getSportsById(id: number): Observable<any> {
+  getPhotographyById(id: number): Observable<any> {
     this.messageService.addMessageService(`Content Item at id: ${id}`);
     return of(contentDb.find(content => content.id === id)); // find id 1
   }
