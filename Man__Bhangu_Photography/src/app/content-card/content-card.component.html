@@ -1,0 +1,28 @@
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{item.type}}</mat-card-title></mat-card-header>
+  
+    <mat-card-content>
+
+    <div [ngClass]="{'type1': item.type === 'Photography 1', 'type2': item.type === 'Photography 2','type3':item.type===''}"></div>
+    <div class="content-list">
+    <div class="card" style="width: 18rem;" >
+
+    <div  appHoverAffect hoverAffect="2px  solid green">
+      <mat-card-title>{{item.id}}</mat-card-title>
+  
+    
+      <h5 class="card-title" appHoverAffect hoverAffect="bold" >{{item.title |lowercase}}</h5>
+      
+       <div [ngSwitch]="item.imgURL">
+        <img   *ngSwitchCase="''" src="{{Default}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+        <img   *ngSwitchDefault src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+        <a class="btn btn-success" routerLink="/detail/{{ item.id }}">View Details</a>
+           
+       </div>
+       
+        </div>
+      </div>
+</div>
+</mat-card-content></mat-card>
