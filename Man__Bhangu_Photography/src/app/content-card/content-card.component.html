@@ -1,0 +1,34 @@
+
+<mat-card>
+  <mat-card-content>
+
+
+<div [ngClass]="{'type1': item.type === 'Photography 1', 'type2': item.type === 'Photograhy 2','type3':item.type===''}"></div>
+<div class="content-list">
+  <div class="card" style="width: 18rem;" >
+    <mat-card-title class="card-title" [innerHtml]="item.id" class="card-title"></mat-card-title>
+        <mat-card-header> <h2 class="card-header" [innerHtml]="item.title"></h2>  </mat-card-header>
+       
+       <div [ngSwitch]="item.imgURL">
+        <img   *ngSwitchCase="''" src="{{Default}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+        <img   *ngSwitchDefault src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+       </div>
+       <div class="card-body">
+          <p class="card-text"  [innerHtml]="item.description"></p>
+          <p class="card-text"  [innerHtml]="item.creator"></p>
+          <p class="card-text"appHoverAffect hoverAffect="underline" [innerHtml]="item.type"></p>
+          <div>Tag:
+            <ul class="card-text">
+            <span *ngFor="let tag of item?.tags">
+              <li appHoverAffect hoverAffect="bold">#{{tag}}</li>
+            </span>
+          </ul>
+        </div>
+         
+
+          
+          
+          
+        </div>
+      </div>
+</div></mat-card-content></mat-card>
