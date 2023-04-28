@@ -13,9 +13,9 @@ import { PhotographyService } from '../services/photography.service';
 export class ContentListComponent implements OnInit {
 	content:Content[]=[];
 	ngOnInit(): void {
-	  this.getsports();
+	  this.getphotography();
 	}
-	getsports()
+	getphotography()
 	{
 	  this.contentService.getContent().subscribe(content => {
 		this.content = content;
@@ -26,7 +26,7 @@ export class ContentListComponent implements OnInit {
 	ContentAdded(newContent: Content) {
 	  debugger
 	  this.contentService.addcontent(newContent).subscribe(con=>{
-		this.getsports();
+		this.getphotography();
 		this.messageService.addMessageService('New content has been added');
 	  });
 	  
